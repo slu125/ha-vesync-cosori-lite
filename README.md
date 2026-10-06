@@ -40,7 +40,7 @@ data:
 2. „VeSync (mit Cosori Lite CAF-LI401S)“ herunterladen, Home Assistant neu starten
 3. Ein bestehender VeSync-Eintrag wird übernommen, die Zugangsdaten müssen nicht neu eingegeben werden.
 
-Abfrage: alle 60 s, solange eine Fritteuse heizt oder gart und 3 Minuten nach „Garprogramm übertragen“ alle 10 s.
+Abfrage alle 60 s. Solange eine Fritteuse heizt oder gart und 3 Minuten nach „Garprogramm übertragen“ alle 10 s.
 
 Beim Start installiert HA pyvesync aus dem GitHub-Release; GitHub muss dafür erreichbar sein.
 
