@@ -5,6 +5,8 @@ VS_DISCOVERY = "vesync_discovery_{}"
 SERVICE_UPDATE_DEVS = "update_devices"
 
 UPDATE_INTERVAL = 60
+UPDATE_INTERVAL_FRYER = 10
+FRYER_FAST_POLL_AFTER_STAGE = 180
 UPDATE_INTERVAL_ENERGY = 60 * 60 * 6
 """
 Update interval for DataCoordinator.

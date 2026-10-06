@@ -89,6 +89,7 @@ async def async_stage_program(
         raise HomeAssistantError(
             f"Could not send the cook program to {device.device_name}"
         )
+    coordinator.fast_poll_after_stage()
     await coordinator.async_request_refresh()
 
 

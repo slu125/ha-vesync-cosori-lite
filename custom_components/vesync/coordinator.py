@@ -12,7 +12,12 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
-from .const import UPDATE_INTERVAL, UPDATE_INTERVAL_ENERGY
+from .const import (
+    FRYER_FAST_POLL_AFTER_STAGE,
+    UPDATE_INTERVAL,
+    UPDATE_INTERVAL_ENERGY,
+    UPDATE_INTERVAL_FRYER,
+)
 
 if TYPE_CHECKING:
     from .fryer import FryerProgram
@@ -27,6 +32,7 @@ class VeSyncDataCoordinator(DataUpdateCoordinator[None]):
 
     config_entry: VesyncConfigEntry
     update_time: float | None = None
+    fast_poll_until: float = 0.0
 
     def __init__(
         self, hass: HomeAssistant, config_entry: VesyncConfigEntry, manager: VeSync
@@ -50,6 +56,15 @@ class VeSyncDataCoordinator(DataUpdateCoordinator[None]):
 
         return time.time() - self.update_time >= UPDATE_INTERVAL_ENERGY
 
+    def fast_poll_after_stage(self) -> None:
+        """Poll fast for a while so a start on the appliance shows up quickly."""
+        self.fast_poll_until = time.monotonic() + FRYER_FAST_POLL_AFTER_STAGE
+
+    def _fryer_needs_fast_poll(self) -> bool:
+        return time.monotonic() < self.fast_poll_until or any(
+            fryer.state.is_running for fryer in self.manager.devices.air_fryers
+        )
+
     @override
     async def _async_update_data(self) -> None:
         """Fetch data from API endpoint."""
@@ -62,3 +77,9 @@ class VeSyncDataCoordinator(DataUpdateCoordinator[None]):
                     await outlet.update_energy()
         except VeSyncError as err:
             raise UpdateFailed(f"The service is unavailable: {err}") from err
+        finally:
+            self.update_interval = timedelta(
+                seconds=UPDATE_INTERVAL_FRYER
+                if self._fryer_needs_fast_poll()
+                else UPDATE_INTERVAL
+            )
