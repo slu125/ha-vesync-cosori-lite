@@ -1,0 +1,24 @@
+{
+  "domain": "vesync",
+  "name": "VeSync",
+  "codeowners": [
+    "@slu125"
+  ],
+  "config_flow": true,
+  "dhcp": [
+    {
+      "hostname": "levoit-*"
+    }
+  ],
+  "documentation": "https://github.com/slu125/ha-vesync-cosori-lite",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/slu125/ha-vesync-cosori-lite/issues",
+  "loggers": [
+    "pyvesync"
+  ],
+  "requirements": [
+    "pyvesync @ https://github.com/slu125/pyvesync/releases/download/v3.4.3.dev550/pyvesync-3.4.3.dev550-py3-none-any.whl"
+  ],
+  "version": "2026.9.4.1"
+}

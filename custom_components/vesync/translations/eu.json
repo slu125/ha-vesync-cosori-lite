@@ -1,0 +1,83 @@
+{
+    "config": {
+        "abort": {
+            "reauth_successful": "Berrautortzea arrakastatsua izan da"
+        },
+        "error": {
+            "invalid_auth": "Autentifikazio baliogabea"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Pasahitza",
+                    "username": "Posta elektronikoa"
+                },
+                "data_description": {
+                    "password": "Zure VeSync kontuari lotutako pasahitza"
+                },
+                "title": "{name}-entzako autortza iraungi da"
+            },
+            "user": {
+                "data": {
+                    "password": "Pasahitza",
+                    "username": "Posta elektronikoa"
+                },
+                "data_description": {
+                    "password": "Zure VeSync kontuari lotutako pasahitza"
+                }
+            }
+        }
+    },
+    "entity": {
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Automatikoa",
+                            "normal": "Normala"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "Hezetasuna"
+                        }
+                    }
+                }
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "state": {
+                    "bright": "Distiratsu"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Airearen kalitatea"
+            }
+        },
+        "switch": {
+            "child_lock": {
+                "name": "Haur-blokeoa"
+            }
+        }
+    },
+    "exceptions": {
+        "invalid_auth": {
+            "message": "Autentifikazio baliogabea"
+        }
+    },
+    "services": {
+        "update_devices": {
+            "name": "Gailuak eguneratu"
+        }
+    }
+}

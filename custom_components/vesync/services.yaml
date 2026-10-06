@@ -1,0 +1,27 @@
+update_devices:
+
+stage_cook_program:
+  target:
+    entity:
+      integration: vesync
+      domain: button
+  fields:
+    mode:
+      example: fries
+      selector:
+        text:
+    temperature:
+      example: 180
+      selector:
+        number:
+          min: 30
+          max: 450
+          mode: box
+    duration:
+      example: 15
+      selector:
+        number:
+          min: 1
+          max: 120
+          unit_of_measurement: min
+          mode: box

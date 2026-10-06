@@ -1,0 +1,175 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "VeSync-kontot \u00e4r redan konfigurerat",
+            "reauth_successful": "\u00c5terautentisering lyckades",
+            "wrong_account": "Det konto som du f\u00f6rs\u00f6ker autentisera p\u00e5 nytt skiljer sig fr\u00e5n det som redan har konfigurerats"
+        },
+        "error": {
+            "api_response_error": "Fel i API-respons",
+            "invalid_auth": "Ogiltig autentisering",
+            "server_error": "Serverfel uppstod"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "L\u00f6senord",
+                    "username": "E-post"
+                },
+                "data_description": {
+                    "password": "L\u00f6senord kopplat till ditt VeSync konto",
+                    "username": "E-postadress kopplad till ditt VeSync konto"
+                },
+                "description": "VeSync-integrationen m\u00e5ste autentisera ditt konto p\u00e5 nytt",
+                "title": "Autentiseringen har upph\u00f6rt att g\u00e4lla f\u00f6r {name}"
+            },
+            "user": {
+                "data": {
+                    "password": "L\u00f6senord",
+                    "username": "E-post"
+                },
+                "data_description": {
+                    "password": "L\u00f6senord kopplat till ditt VeSync konto",
+                    "username": "E-postadress kopplad till ditt VeSync konto"
+                },
+                "description": "Ange kontot som anv\u00e4nds i vesync appen. 2FA st\u00f6ds inte och m\u00e5ste inaktiveras.",
+                "title": "Ange anv\u00e4ndarnamn och l\u00f6senord"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "L\u00e5gt vatten"
+            },
+            "water_tank_lifted": {
+                "name": "Vattentanken lyft"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "eco": "Eko",
+                            "normal": "Normal",
+                            "pet": "Husdjur",
+                            "sleep": "Sover",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "Luftfuktighet"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "Dimniv\u00e5"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "Niv\u00e5 f\u00f6r nattljus",
+                "state": {
+                    "bright": "Ljust",
+                    "dim": "D\u00e4mpat",
+                    "off": "Av",
+                    "on": "P\u00e5"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Luftkvalitet"
+            },
+            "cook_set_temp": {
+                "name": "Inst\u00e4lld temperatur f\u00f6r tillagning"
+            },
+            "cook_set_time": {
+                "name": "Inst\u00e4lld tillagningstid"
+            },
+            "cook_status": {
+                "name": "Matlagningsstatus",
+                "state": {
+                    "cooking": "Matlagning",
+                    "cooking_end": "Matlagning klar",
+                    "cooking_stop": "Matlagning avbruten",
+                    "heating": "F\u00f6rv\u00e4rmning",
+                    "preheat_end": "F\u00f6rv\u00e4rmning klar",
+                    "preheat_stop": "F\u00f6rv\u00e4rmningen stoppad",
+                    "pull_out": "L\u00e5dan utdragen",
+                    "standby": "Vilol\u00e4ge"
+                }
+            },
+            "current_power": {
+                "name": "Aktuell effekt"
+            },
+            "current_temp": {
+                "name": "Aktuell temperatur"
+            },
+            "current_voltage": {
+                "name": "Aktuell sp\u00e4nning"
+            },
+            "energy_month": {
+                "name": "Elf\u00f6rbrukning m\u00e5nadsvis"
+            },
+            "energy_today": {
+                "name": "Elf\u00f6rbrukning i dag"
+            },
+            "energy_week": {
+                "name": "Elf\u00f6rbrukning veckovis"
+            },
+            "energy_year": {
+                "name": "Elf\u00f6rbrukning \u00e5rsvis"
+            },
+            "filter_life": {
+                "name": "Filtrets livsl\u00e4ngd"
+            },
+            "preheat_set_time": {
+                "name": "F\u00f6rv\u00e4rmning inst\u00e4lld tid"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "Automatisk avst\u00e4ngning"
+            },
+            "child_lock": {
+                "name": "Barnl\u00e5s"
+            },
+            "display": {
+                "name": "Visa"
+            },
+            "drying_mode_power_off": {
+                "name": "Aktivera torkl\u00e4ge n\u00e4r str\u00f6mmen \u00e4r avst\u00e4ngd"
+            }
+        }
+    },
+    "exceptions": {
+        "api_response_error": {
+            "message": "Ogiltigt svar fr\u00e5n VeSync API"
+        },
+        "invalid_auth": {
+            "message": "Ogiltig autentisering"
+        },
+        "server_error": {
+            "message": "Ett serverfel uppstod vid anslutningen till VeSync"
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "L\u00e4gger till nya VeSync-enheter i Home Assistant.",
+            "name": "Uppdatera enheter"
+        }
+    }
+}

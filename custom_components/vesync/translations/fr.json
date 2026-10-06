@@ -1,0 +1,175 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Le compte VeSync est d\u00e9j\u00e0 configur\u00e9",
+            "reauth_successful": "La r\u00e9authentification a r\u00e9ussi",
+            "wrong_account": "Le compte que vous essayez de r\u00e9authentifier est diff\u00e9rent de celui configur\u00e9"
+        },
+        "error": {
+            "api_response_error": "Erreur de r\u00e9ponse de l'API",
+            "invalid_auth": "Authentification non valide",
+            "server_error": "Une erreur de serveur s'est produite"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Mot de passe",
+                    "username": "E-mail"
+                },
+                "data_description": {
+                    "password": "Mot de passe associ\u00e9 \u00e0 votre compte VeSync",
+                    "username": "Adresse e-mail associ\u00e9e \u00e0 votre compte VeSync"
+                },
+                "description": "L'int\u00e9gration VeSync doit r\u00e9authentifier votre compte",
+                "title": "L'authentification a expir\u00e9 pour {name}"
+            },
+            "user": {
+                "data": {
+                    "password": "Mot de passe",
+                    "username": "E-mail"
+                },
+                "data_description": {
+                    "password": "Mot de passe associ\u00e9 \u00e0 votre compte VeSync",
+                    "username": "Adresse e-mail associ\u00e9e \u00e0 votre compte VeSync"
+                },
+                "description": "Saisissez le compte utilis\u00e9 dans l'application VeSync. L'authentification \u00e0 deux facteurs n'est pas prise en charge et doit \u00eatre d\u00e9sactiv\u00e9e.",
+                "title": "Saisir le nom d'utilisateur et le mot de passe"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "Niveau d'eau bas"
+            },
+            "water_tank_lifted": {
+                "name": "R\u00e9servoir d'eau soulev\u00e9"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "eco": "\u00c9co",
+                            "normal": "Normal",
+                            "pet": "Animal domestique",
+                            "sleep": "Nuit",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "Humidit\u00e9"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "Niveau de brume"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "Niveau de la veilleuse",
+                "state": {
+                    "bright": "Lumineux",
+                    "dim": "Faible",
+                    "off": "\u00c9teint",
+                    "on": "Activ\u00e9"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Qualit\u00e9 de l'air"
+            },
+            "cook_set_temp": {
+                "name": "Temp\u00e9rature de cuisson d\u00e9finie"
+            },
+            "cook_set_time": {
+                "name": "Dur\u00e9e de cuisson d\u00e9finie"
+            },
+            "cook_status": {
+                "name": "\u00c9tat de cuisson",
+                "state": {
+                    "cooking": "Cuisson",
+                    "cooking_end": "Cuisson termin\u00e9e",
+                    "cooking_stop": "Cuisson arr\u00eat\u00e9e",
+                    "heating": "Pr\u00e9chauffage",
+                    "preheat_end": "Pr\u00e9chauffage termin\u00e9",
+                    "preheat_stop": "Pr\u00e9chauffage arr\u00eat\u00e9",
+                    "pull_out": "Tiroir sorti",
+                    "standby": "En veille"
+                }
+            },
+            "current_power": {
+                "name": "Puissance actuelle"
+            },
+            "current_temp": {
+                "name": "Temp\u00e9rature actuelle"
+            },
+            "current_voltage": {
+                "name": "Tension actuelle"
+            },
+            "energy_month": {
+                "name": "Consommation d'\u00e9nergie mensuelle"
+            },
+            "energy_today": {
+                "name": "Consommation d'\u00e9nergie aujourd'hui"
+            },
+            "energy_week": {
+                "name": "Consommation d'\u00e9nergie hebdomadaire"
+            },
+            "energy_year": {
+                "name": "Consommation d'\u00e9nergie annuelle"
+            },
+            "filter_life": {
+                "name": "Dur\u00e9e de vie du filtre"
+            },
+            "preheat_set_time": {
+                "name": "Dur\u00e9e de pr\u00e9chauffage d\u00e9finie"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "Extinction automatique"
+            },
+            "child_lock": {
+                "name": "S\u00e9curit\u00e9 enfant"
+            },
+            "display": {
+                "name": "Affichage"
+            },
+            "drying_mode_power_off": {
+                "name": "Activer le mode s\u00e9chage lorsque l'appareil est \u00e9teint"
+            }
+        }
+    },
+    "exceptions": {
+        "api_response_error": {
+            "message": "R\u00e9ponse non valide de l'API VeSync"
+        },
+        "invalid_auth": {
+            "message": "Authentification non valide"
+        },
+        "server_error": {
+            "message": "Une erreur serveur s'est produite lors de la connexion \u00e0 VeSync"
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "Ajoute de nouveaux appareils VeSync \u00e0 Home Assistant.",
+            "name": "Mettre \u00e0 jour les appareils"
+        }
+    }
+}

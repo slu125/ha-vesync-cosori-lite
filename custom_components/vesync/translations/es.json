@@ -1,0 +1,270 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "La cuenta VeSync ya está configurada",
+      "reauth_successful": "La autenticación se volvió a realizar correctamente",
+      "wrong_account": "La cuenta que estás intentando volver a autenticar es diferente de la que está configurada"
+    },
+    "error": {
+      "api_response_error": "Error de respuesta de la API",
+      "invalid_auth": "Autenticación no válida",
+      "server_error": "Se produjo un error en el servidor"
+    },
+    "step": {
+      "reauth_confirm": {
+        "data": {
+          "password": "Contraseña",
+          "username": "Correo electrónico"
+        },
+        "data_description": {
+          "password": "Contraseña asociada a tu cuenta VeSync",
+          "username": "Dirección de correo electrónico asociada a tu cuenta VeSync"
+        },
+        "description": "La integración de VeSync necesita volver a autenticar tu cuenta",
+        "title": "Autenticación caducada para {name}"
+      },
+      "user": {
+        "data": {
+          "password": "Contraseña",
+          "username": "Correo electrónico"
+        },
+        "data_description": {
+          "password": "Contraseña asociada a tu cuenta VeSync",
+          "username": "Dirección de correo electrónico asociada a tu cuenta VeSync"
+        },
+        "description": "Introduce la cuenta utilizada en la aplicación vesync. 2FA no es compatible y debe deshabilitarse.",
+        "title": "Introducir nombre de usuario y contraseña"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "water_lacks": {
+        "name": "Agua baja"
+      },
+      "water_tank_lifted": {
+        "name": "Depósito de agua elevado"
+      },
+      "is_running": {
+        "name": "En funcionamiento"
+      }
+    },
+    "fan": {
+      "vesync": {
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "auto": "Auto",
+              "eco": "Eco",
+              "normal": "Normal",
+              "pet": "Mascota",
+              "sleep": "Reposo",
+              "turbo": "Turbo"
+            }
+          }
+        }
+      }
+    },
+    "humidifier": {
+      "vesync": {
+        "state_attributes": {
+          "mode": {
+            "state": {
+              "humidity": "Humedad"
+            }
+          }
+        }
+      }
+    },
+    "number": {
+      "mist_level": {
+        "name": "Nivel de niebla"
+      },
+      "cook_program_temperature": {
+        "name": "Temperatura del programa"
+      },
+      "cook_program_duration": {
+        "name": "Duración del programa"
+      }
+    },
+    "select": {
+      "night_light_level": {
+        "name": "Nivel de luz nocturna",
+        "state": {
+          "bright": "Brillante",
+          "dim": "Atenuado",
+          "off": "Apagado",
+          "on": "Encendido"
+        }
+      },
+      "cook_program_mode": {
+        "name": "Modo del programa",
+        "state": {
+          "custom": "Personalizado",
+          "chicken": "Pollo",
+          "fries": "Patatas fritas",
+          "bacon": "Beicon",
+          "steak": "Filete",
+          "veggies": "Verduras",
+          "warm": "Mantener caliente",
+          "airfry": "Freír con aire",
+          "bake": "Hornear",
+          "roast": "Asar",
+          "broil": "Gratinar",
+          "frozen": "Congelados",
+          "reheat": "Recalentar",
+          "dehydrate": "Deshidratar",
+          "frenchfries": "Patatas fritas",
+          "seafood": "Marisco",
+          "proof": "Fermentar",
+          "preheat": "Precalentar"
+        }
+      }
+    },
+    "sensor": {
+      "air_quality": {
+        "name": "Calidad del aire"
+      },
+      "cook_set_temp": {
+        "name": "Temperatura de cocción establecida"
+      },
+      "cook_set_time": {
+        "name": "Tiempo de cocción establecido"
+      },
+      "cook_status": {
+        "name": "Estado de cocción",
+        "state": {
+          "cooking": "Cocinando",
+          "cooking_end": "Cocción terminada",
+          "cooking_stop": "Cocción detenida",
+          "heating": "Precalentamiento",
+          "preheat_end": "Precalentamiento terminado",
+          "preheat_stop": "Precalentamiento detenido",
+          "pull_out": "Cajón extraído",
+          "standby": "En espera",
+          "completed": "Completado",
+          "unknown": "Desconocido"
+        }
+      },
+      "current_power": {
+        "name": "Potencia actual"
+      },
+      "current_temp": {
+        "name": "Temperatura actual"
+      },
+      "current_voltage": {
+        "name": "Tensión actual"
+      },
+      "energy_month": {
+        "name": "Consumo mensual de energía"
+      },
+      "energy_today": {
+        "name": "Consumo de energía hoy"
+      },
+      "energy_week": {
+        "name": "Consumo semanal de energía"
+      },
+      "energy_year": {
+        "name": "Consumo anual de energía"
+      },
+      "filter_life": {
+        "name": "Vida útil del filtro"
+      },
+      "preheat_set_time": {
+        "name": "Tiempo de precalentamiento establecido"
+      },
+      "remaining_time": {
+        "name": "Tiempo restante"
+      },
+      "cook_end_time": {
+        "name": "Termina a las"
+      },
+      "cook_mode": {
+        "name": "Modo de cocción",
+        "state": {
+          "custom": "Personalizado",
+          "chicken": "Pollo",
+          "fries": "Patatas fritas",
+          "bacon": "Beicon",
+          "steak": "Filete",
+          "veggies": "Verduras",
+          "warm": "Mantener caliente",
+          "airfry": "Freír con aire",
+          "bake": "Hornear",
+          "roast": "Asar",
+          "broil": "Gratinar",
+          "frozen": "Congelados",
+          "reheat": "Recalentar",
+          "dehydrate": "Deshidratar",
+          "frenchfries": "Patatas fritas",
+          "seafood": "Marisco",
+          "proof": "Fermentar",
+          "preheat": "Precalentar"
+        }
+      }
+    },
+    "switch": {
+      "auto_off_config": {
+        "name": "Apagado automático"
+      },
+      "child_lock": {
+        "name": "Bloqueo infantil"
+      },
+      "display": {
+        "name": "Pantalla"
+      },
+      "drying_mode_power_off": {
+        "name": "Habilitar el modo de secado con la alimentación desconectada"
+      }
+    },
+    "button": {
+      "end_cooking": {
+        "name": "Terminar cocción"
+      },
+      "pause_cooking": {
+        "name": "Pausar cocción"
+      },
+      "resume_cooking": {
+        "name": "Reanudar cocción"
+      },
+      "stage_cook_program": {
+        "name": "Enviar programa de cocción"
+      }
+    }
+  },
+  "exceptions": {
+    "api_response_error": {
+      "message": "Respuesta no válida de la API de VeSync"
+    },
+    "invalid_auth": {
+      "message": "Autenticación no válida"
+    },
+    "server_error": {
+      "message": "Se produjo un error del servidor al conectar con VeSync."
+    }
+  },
+  "services": {
+    "update_devices": {
+      "description": "Añade nuevos dispositivos VeSync a Home Assistant.",
+      "name": "Actualizar dispositivos"
+    },
+    "stage_cook_program": {
+      "name": "Enviar programa de cocción",
+      "description": "Envía un programa de cocción a la freidora de aire. Modelos como la Cosori Lite solo lo preparan; se inicia en el aparato. Los campos omitidos se toman de las entidades del programa.",
+      "fields": {
+        "mode": {
+          "name": "Modo",
+          "description": "Modo de cocción, p. ej. fries o steak."
+        },
+        "temperature": {
+          "name": "Temperatura",
+          "description": "Temperatura de cocción en la unidad de la freidora."
+        },
+        "duration": {
+          "name": "Duración",
+          "description": "Tiempo de cocción en minutos."
+        }
+      }
+    }
+  }
+}

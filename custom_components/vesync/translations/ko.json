@@ -1,0 +1,175 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "VeSync \uacc4\uc815\uc774 \uc774\ubbf8 \uad6c\uc131\ub418\uc5b4 \uc788\uc2b5\ub2c8\ub2e4.",
+            "reauth_successful": "\uc7ac\uc778\uc99d\uc5d0 \uc131\uacf5\ud588\uc2b5\ub2c8\ub2e4",
+            "wrong_account": "\uc7ac\uc778\uc99d\ud558\ub824\ub294 \uacc4\uc815\uc774 \uad6c\uc131\ub41c \uacc4\uc815\uacfc \ub2e4\ub985\ub2c8\ub2e4."
+        },
+        "error": {
+            "api_response_error": "API \uc751\ub2f5 \uc624\ub958",
+            "invalid_auth": "\uc778\uc99d\uc774 \uc798\ubabb\ub418\uc5c8\uc2b5\ub2c8\ub2e4",
+            "server_error": "\uc11c\ubc84 \uc624\ub958\uac00 \ubc1c\uc0dd\ud588\uc2b5\ub2c8\ub2e4"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "\ube44\ubc00\ubc88\ud638",
+                    "username": "\uc774\uba54\uc77c"
+                },
+                "data_description": {
+                    "password": "VeSync \uacc4\uc815\uacfc \uc5f0\uacb0\ub41c \ube44\ubc00\ubc88\ud638",
+                    "username": "VeSync \uacc4\uc815\uacfc \uc5f0\uacb0\ub41c \uc774\uba54\uc77c \uc8fc\uc18c"
+                },
+                "description": "VeSync \uc5f0\ub3d9\uc744 \uc704\ud574\uc11c\ub294 \uacc4\uc815\uc744 \ub2e4\uc2dc \uc778\uc99d\ud574\uc57c \ud569\ub2c8\ub2e4.",
+                "title": "{name}\uc758 \uc778\uc99d\uc774 \ub9cc\ub8cc\ub418\uc5c8\uc2b5\ub2c8\ub2e4"
+            },
+            "user": {
+                "data": {
+                    "password": "\ube44\ubc00\ubc88\ud638",
+                    "username": "\uc774\uba54\uc77c"
+                },
+                "data_description": {
+                    "password": "VeSync \uacc4\uc815\uacfc \uc5f0\uacb0\ub41c \ube44\ubc00\ubc88\ud638",
+                    "username": "VeSync \uacc4\uc815\uacfc \uc5f0\uacb0\ub41c \uc774\uba54\uc77c \uc8fc\uc18c"
+                },
+                "description": "VeSync \uc571\uc5d0\uc11c \uc0ac\uc6a9\ud558\ub294 \uacc4\uc815\uc744 \uc785\ub825\ud558\uc138\uc694. 2\ub2e8\uacc4 \uc778\uc99d(2FA)\uc740 \uc9c0\uc6d0\ub418\uc9c0 \uc54a\uc73c\ubbc0\ub85c \ube44\ud65c\uc131\ud654\ud574\uc57c \ud569\ub2c8\ub2e4.",
+                "title": "\uc0ac\uc6a9\uc790 \uc774\ub984\uacfc \uc554\ud638\ub97c \uc785\ub825\ud558\uc138\uc694"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "\ub0ae\uc740 \uc218\uc704"
+            },
+            "water_tank_lifted": {
+                "name": "\ubb3c\ud0f1\ud06c\ub97c \ub4e4\uc5b4 \uc62c\ub838\uc2b5\ub2c8\ub2e4"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "\uc790\ub3d9",
+                            "eco": "\uc5d0\ucf54",
+                            "normal": "\uc815\uc0c1",
+                            "pet": "\uc560\uc644 \ub3d9\ubb3c",
+                            "sleep": "\uc7a0",
+                            "turbo": "\ud130\ubcf4"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "\uc2b5\ub3c4"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "\uc548\uac1c \uc218\uc900"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "\uc57c\uac04 \uc870\uba85 \ubc1d\uae30",
+                "state": {
+                    "bright": "\ubc1d\uc74c",
+                    "dim": "\uc5b4\ub451\ud55c",
+                    "off": "\uaebc\uc9d0",
+                    "on": "\ucf1c\uc9d0"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "\uacf5\uae30\uc9c8"
+            },
+            "cook_set_temp": {
+                "name": "\uc870\ub9ac \uc124\uc815 \uc628\ub3c4"
+            },
+            "cook_set_time": {
+                "name": "\uc870\ub9ac \uc124\uc815 \uc2dc\uac04"
+            },
+            "cook_status": {
+                "name": "\uc870\ub9ac \uc0c1\ud0dc",
+                "state": {
+                    "cooking": "\uc694\ub9ac",
+                    "cooking_end": "\uc694\ub9ac\uac00 \uc644\ub8cc\ub418\uc5c8\uc2b5\ub2c8\ub2e4",
+                    "cooking_stop": "\uc694\ub9ac\uac00 \uba48\ucdc4\uc2b5\ub2c8\ub2e4",
+                    "heating": "\uc608\uc5f4",
+                    "preheat_end": "\uc608\uc5f4 \uc644\ub8cc",
+                    "preheat_stop": "\uc608\uc5f4\uc774 \uc911\uc9c0\ub418\uc5c8\uc2b5\ub2c8\ub2e4",
+                    "pull_out": "\uc11c\ub78d\uc774 \ub2f9\uaca8\uc838 \ub098\uc654\ub2e4",
+                    "standby": "\ub300\uae30 \uc911"
+                }
+            },
+            "current_power": {
+                "name": "\ud604\uc7ac \uc804\ub825"
+            },
+            "current_temp": {
+                "name": "\ud604\uc7ac \uc628\ub3c4"
+            },
+            "current_voltage": {
+                "name": "\ud604\uc7ac \uc804\uc555"
+            },
+            "energy_month": {
+                "name": "\uc6d4\ubcc4 \uc5d0\ub108\uc9c0 \uc0ac\uc6a9\ub7c9"
+            },
+            "energy_today": {
+                "name": "\uc624\ub298 \uc5d0\ub108\uc9c0 \uc0ac\uc6a9"
+            },
+            "energy_week": {
+                "name": "\uc8fc\uac04 \uc5d0\ub108\uc9c0 \uc0ac\uc6a9\ub7c9"
+            },
+            "energy_year": {
+                "name": "\uc5f0\uac04 \uc5d0\ub108\uc9c0 \uc0ac\uc6a9\ub7c9"
+            },
+            "filter_life": {
+                "name": "\ud544\ud130 \uc218\uba85"
+            },
+            "preheat_set_time": {
+                "name": "\uc608\uc5f4 \uc124\uc815 \uc2dc\uac04"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "\uc790\ub3d9 \uaebc\uc9d0"
+            },
+            "child_lock": {
+                "name": "\uc5b4\ub9b0\uc774 \uc7a0\uae08"
+            },
+            "display": {
+                "name": "\ud45c\uc2dc\ud558\ub2e4"
+            },
+            "drying_mode_power_off": {
+                "name": "\uc804\uc6d0\uc774 \uaebc\uc9c4 \uc0c1\ud0dc\uc5d0\uc11c \uac74\uc870 \ubaa8\ub4dc\ub97c \ud65c\uc131\ud654\ud558\uc138\uc694."
+            }
+        }
+    },
+    "exceptions": {
+        "api_response_error": {
+            "message": "VeSync API\uc5d0\uc11c \uc798\ubabb\ub41c \uc751\ub2f5\uc744 \ubc1b\uc558\uc2b5\ub2c8\ub2e4"
+        },
+        "invalid_auth": {
+            "message": "\uc778\uc99d\uc774 \uc798\ubabb\ub418\uc5c8\uc2b5\ub2c8\ub2e4"
+        },
+        "server_error": {
+            "message": "VeSync\uc5d0 \uc5f0\uacb0\ud558\ub294 \ub3d9\uc548 \uc11c\ubc84 \uc624\ub958\uac00 \ubc1c\uc0dd\ud588\uc2b5\ub2c8\ub2e4"
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "Home Assistant\uc5d0 \uc0c8\ub85c\uc6b4 VeSync \uae30\uae30\ub97c \ucd94\uac00\ud569\ub2c8\ub2e4.",
+            "name": "\uae30\uae30 \uc5c5\ub370\uc774\ud2b8"
+        }
+    }
+}
