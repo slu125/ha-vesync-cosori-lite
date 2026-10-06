@@ -241,6 +241,12 @@
     },
     "server_error": {
       "message": "Se produjo un error del servidor al conectar con VeSync."
+    },
+    "fryer_running": {
+      "message": "La freidora ya está ejecutando un programa. Termínalo primero o espera a que acabe."
+    },
+    "fryer_command_failed": {
+      "message": "La freidora ha rechazado la orden: {message}"
     }
   },
   "services": {

@@ -241,6 +241,12 @@
     },
     "server_error": {
       "message": "Beim Verbindungsaufbau zu VeSync ist ein Serverfehler aufgetreten."
+    },
+    "fryer_running": {
+      "message": "Die Heißluftfritteuse führt bereits ein Programm aus. Erst beenden oder abwarten, bis es fertig ist."
+    },
+    "fryer_command_failed": {
+      "message": "Die Heißluftfritteuse hat den Befehl abgelehnt: {message}"
     }
   },
   "services": {

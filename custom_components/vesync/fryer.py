@@ -16,11 +16,14 @@ from homeassistant.exceptions import HomeAssistantError
 from homeassistant.util import dt as dt_util
 
 from .common import is_air_fryer
+from .const import DOMAIN
 from .coordinator import VeSyncDataCoordinator
 
 DEFAULT_TEMPERATURE = 180
 DEFAULT_MINUTES = 15
 MAX_MINUTES = 120
+# VeSync rejects a new program with this code while one is running
+ERROR_DEVICE_RUNNING = 11012000
 
 
 @dataclass
@@ -63,6 +66,10 @@ async def async_stage_program(
     coordinator: VeSyncDataCoordinator, device: VeSyncFryer, program: FryerProgram
 ) -> None:
     """Send a cook program to the fryer."""
+    if device.state.is_running:
+        raise HomeAssistantError(
+            translation_domain=DOMAIN, translation_key="fryer_running"
+        )
     if program.mode not in mode_options(device):
         raise HomeAssistantError(f"Unknown cook mode {program.mode}")
     if (temperature := device.prepare_temperature(program.temperature)) is None:
@@ -86,8 +93,18 @@ async def async_stage_program(
         )
         success = await device.set_mode_from_recipe(recipe)
     if not success:
+        await coordinator.async_request_refresh()
+        response = device.last_response
+        if response is not None and response.code == ERROR_DEVICE_RUNNING:
+            raise HomeAssistantError(
+                translation_domain=DOMAIN, translation_key="fryer_running"
+            )
         raise HomeAssistantError(
-            f"Could not send the cook program to {device.device_name}"
+            translation_domain=DOMAIN,
+            translation_key="fryer_command_failed",
+            translation_placeholders={
+                "message": response.message if response is not None else ""
+            },
         )
     coordinator.fast_poll_after_stage()
     await coordinator.async_request_refresh()
